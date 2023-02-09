@@ -12,4 +12,5 @@ jobs:
         JAVA_HOME: ${{ env.JAVA_HOME_11_X64 }}
         HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
       run: |
-        brew list
+        sed -i '' "s#/Users/brucecollie/code/scratch/repro#$(pwd)#" Formula/demo.rb
+        cat Formula/demo.rb
