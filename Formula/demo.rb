@@ -5,7 +5,7 @@ class Demo < Formula
   version "0.1"
 
   depends_on "haskell-stack" => :build
-  depends_on "llvm@15" => :optional
+  depends_on "llvm" => :optional
 
   def install
     ENV.deparallelize do
