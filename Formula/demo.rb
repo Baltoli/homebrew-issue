@@ -5,13 +5,10 @@ class Demo < Formula
   version "0.1"
 
   depends_on "haskell-stack" => :build
-  depends_on "llvm" => :optional
+  depends_on "llvm"          => :optional
 
   def install
-    ENV.deparallelize do
-      system "stack", "setup"
-    end
-
+    system "stack", "setup"
     share.install "README.md"
   end
 
