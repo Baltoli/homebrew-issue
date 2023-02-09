@@ -10,6 +10,11 @@ jobs:
     - name: 'Check out code'
       uses: actions/checkout@v3
 
+    - name: 'Brew issue steps'
+      run: |
+        brew doctor
+        brew update
+
     - name: 'Make tarball'
       run: |
         tar czvf src.tar.gz *
@@ -20,6 +25,7 @@ jobs:
       run: |
         sed -i '' "s#/Users/brucecollie/code/scratch/repro#$(pwd)#" Formula/demo.rb
         brew install ./Formula/demo.rb --verbose --with-llvm
+        brew gist-logs ./Formula/demo.rb --with-llvm
 
   test-brew-success:
     name: 'Test Brew success'
@@ -27,11 +33,6 @@ jobs:
     steps:
     - name: 'Check out code'
       uses: actions/checkout@v3
-
-    - name: 'Brew issue steps'
-      run: |
-        brew doctor
-        brew update
 
     - name: 'Make tarball'
       run: |
