@@ -16,4 +16,4 @@ jobs:
         HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
       run: |
         sed -i '' "s#/Users/brucecollie/code/scratch/repro#$(pwd)#" Formula/demo.rb
-        cat Formula/demo.rb
+        brew install ./Formula/demo.rb
