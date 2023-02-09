@@ -13,9 +13,8 @@ class Demo < Formula
 
   def install
     old_path = ENV["PATH"]
-    cut_path = ENV["PATH"].sub "/usr/local/opt/llvm@13/bin:", ""
 
-    ENV["PATH"] = cut_path
+    ENV["PATH"] = ENV["PATH"].sub "#{Formula["llvm@13"].bin}:", ""
     puts ENV["PATH"]
     system "stack", "setup"
     ENV["PATH"] = old_path
