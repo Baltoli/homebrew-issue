@@ -5,7 +5,7 @@ class Demo < Formula
   version "0.1"
 
   depends_on "haskell-stack" => :build
-  depends_on "llvm"          => :optional
+  depends_on "llvm@13"#          => :optional
 
   depends_on "bzip2"
   depends_on "make"
@@ -13,7 +13,7 @@ class Demo < Formula
 
   def install
     old_path = ENV["PATH"]
-    cut_path = ENV["PATH"].sub "/usr/local/opt/llvm/bin:", ""
+    cut_path = ENV["PATH"].sub "/usr/local/opt/llvm@13/bin:", ""
 
     ENV["PATH"] = cut_path
     puts ENV["PATH"]
