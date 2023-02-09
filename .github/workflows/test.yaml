@@ -1,0 +1,13 @@
+name: 'Test issue'
+on: [push]
+concurrency:
+  group: ${{ github.workflow }}
+jobs:
+  test-brew-failure:
+    name: 'Test Brew failure'
+    runs-on: macos-11
+    env:
+      JAVA_HOME: ${{ env.JAVA_HOME_11_X64 }}
+      HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
+    run: |
+      brew list
