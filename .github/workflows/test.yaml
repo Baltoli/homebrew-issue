@@ -12,6 +12,7 @@ jobs:
 
     - name: 'Brew issue steps'
       run: |
+        brew config
         brew doctor
         brew update
 
@@ -24,8 +25,7 @@ jobs:
         HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
       run: |
         sed -i '' "s#/Users/brucecollie/code/scratch/repro#$(pwd)#" Formula/demo.rb
-        brew install ./Formula/demo.rb --verbose --with-llvm || true
-        brew gist-logs ./Formula/demo.rb --with-llvm
+        brew install ./Formula/demo.rb --verbose --with-llvm
 
   test-brew-success:
     name: 'Test Brew success'
