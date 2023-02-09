@@ -1,7 +1,7 @@
 class Demo < Formula
   desc "Demo reproduction"
   homepage ""
-  url "file:///Users/brucecollie/code/scratch/repro/empty.tar.gz"
+  url "file:///Users/brucecollie/code/scratch/repro/src.tar.gz"
   version "0.1"
 
   # depends_on "boost" => :build
@@ -22,7 +22,7 @@ class Demo < Formula
 
   def install
     system "true"
-    bin.install "empty"
+    share.install "README"
     # ENV["SDKROOT"] = MacOS.sdk_path
     # ENV["DESTDIR"] = ""
     # ENV["PREFIX"] = prefix.to_s

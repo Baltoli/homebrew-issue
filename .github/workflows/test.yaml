@@ -10,6 +10,10 @@ jobs:
     - name: 'Check out code'
       uses: actions/checkout@v3
 
+    - name: 'Make tarball'
+      run: |
+        tar czvf src.tar.gz *
+
     - name: 'Build formula'
       env:
         JAVA_HOME: ${{ env.JAVA_HOME_11_X64 }}
