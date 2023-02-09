@@ -24,7 +24,7 @@ jobs:
         HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
       run: |
         sed -i '' "s#/Users/brucecollie/code/scratch/repro#$(pwd)#" Formula/demo.rb
-        brew install ./Formula/demo.rb --verbose --with-llvm
+        brew install ./Formula/demo.rb --verbose --with-llvm || true
         brew gist-logs ./Formula/demo.rb --with-llvm
 
   test-brew-success:
