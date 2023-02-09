@@ -22,7 +22,7 @@ class Demo < Formula
 
   def install
     system "true"
-    share.install "README"
+    share.install "README.md"
     # ENV["SDKROOT"] = MacOS.sdk_path
     # ENV["DESTDIR"] = ""
     # ENV["PREFIX"] = prefix.to_s
