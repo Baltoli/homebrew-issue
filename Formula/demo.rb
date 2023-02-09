@@ -5,13 +5,9 @@ class Demo < Formula
   version "0.1"
 
   depends_on "haskell-stack" => :build
-  depends_on "llvm@15"
+  depends_on "llvm@15" => :optional
 
   def install
-    # ENV["SDKROOT"] = MacOS.sdk_path
-    # ENV["DESTDIR"] = ""
-    # ENV["PREFIX"] = prefix.to_s
-    # ENV["HOMEBREW_PREFIX"] = HOMEBREW_PREFIX
     ENV.deparallelize do
       system "stack", "setup"
     end
