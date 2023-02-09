@@ -8,6 +8,7 @@ class Demo < Formula
   depends_on "llvm"          => :optional
 
   def install
+    puts ENV["PATH"]
     system "stack", "setup"
     share.install "README.md"
   end
